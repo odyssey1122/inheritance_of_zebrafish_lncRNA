@@ -6,7 +6,7 @@ import random
 import numpy as np
 import sys
 
-# --- THE "OVERFIT-KILLER" ARCHITECTURE ---
+# THE OVERFIT-KILLER ARCHITECTURE
 class FinalMScCNN(nn.Module):
     def __init__(self, dropout=0.3):
         super(FinalMScCNN, self).__init__()
@@ -46,7 +46,7 @@ class FinalMScCNN(nn.Module):
         return self.fc2(x)
 
 
-# --- FASTA DATA LOADER ---
+# Load FASTA Data
 class FastaDataset(Dataset):
     def __init__(self, inh_path, non_inh_path):
         self.samples = []
@@ -80,7 +80,7 @@ class FastaDataset(Dataset):
     def __len__(self): return len(self.samples)
     def __getitem__(self, idx): return self.samples[idx]
 
-# --- TRAINING ENGINE ---
+# Training Engine
 def main():
     # 1. Prepare Data
     ds = FastaDataset("inherited_train.fasta", "non_inherited_train.fasta")
@@ -98,7 +98,7 @@ def main():
     p_weight = torch.tensor([n_non / n_inh])
     print(f"Class Weight (Inherited): {p_weight.item():.2f}")
 
-    # 2. Setup "The Brain"
+    # 2. Setup
     model = FinalMScCNN(dropout=0.3)
     # Weight decay (1e-4) is the key to stopping overfitting
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0005, weight_decay=1e-4)
