@@ -6,7 +6,7 @@ import random
 import numpy as np
 import sys
 
-# THE OVERFIT-KILLER ARCHITECTURE
+# overfit-killer
 class FinalMScCNN(nn.Module):
     def __init__(self, dropout=0.3):
         super(FinalMScCNN, self).__init__()
