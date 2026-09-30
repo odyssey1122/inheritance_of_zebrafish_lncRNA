@@ -3,10 +3,10 @@
  STEP 6 — Extract motif-based features
 
  Three sources:
-   SOURCE 1 — Hand-curated motifs (hardcoded sequences) miR-430 target sites, m6A, polyA signals, PUMILIO
+   SOURCE 1 — Curated motifs (hardcoded sequences) miR-430 target sites, m6A, polyA signals, PUMILIO sites
 
    SOURCE 2 — STREME discovered motifs
-     19 motifs enriched in inherited + 19 in non-inherited. Parsed directly from streme.txt output files
+     19 motifs enriched in inherited + 19 in non-inherited. Parsed directly from streme.txt output files with enrichment data
 
    SOURCE 3 — TOMTOM RBP motifs
      Top 10 RBPs from inherited TOMTOM + top 10 from non-inherited TOMTOM. Consensus sequences extracted from TOMTOM tsv output
